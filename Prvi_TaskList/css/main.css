@@ -1,0 +1,27 @@
+.list{
+	background-color:lavender;
+	padding-top:15px;
+	padding-bottom: 20px;
+}
+a.list-group-item:hover{
+	background-color:#fff;
+}
+
+.listitem{
+	background-color:#fff;
+
+}
+
+.itemelement-vcenter{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .row .lisitembuttons{
+        
+        width:9%;
+		margin-right:2px;
+    }
+
+}
