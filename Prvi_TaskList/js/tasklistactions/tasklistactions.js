@@ -8,7 +8,7 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
   $scope.tasks = [];
   
   $scope.addTask = function(){
-	  if($scope.taskidcounter > $scope.maxtasks)
+	  if($scope.tasks.length > $scope.maxtasks)
 		  return;
 	  
 	  var task = {
@@ -21,6 +21,11 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
 	  console.log("Task list size: " + $scope.tasks.length);
 	  console.log("Task[0]: " + $scope.tasks[0].taskname);
 	  
+  }
+  
+  $scope.removeTask = function(index){
+		$scope.tasks.splice(index, 1);
+  
   }
  
 }]);
