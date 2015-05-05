@@ -7,21 +7,64 @@ a.list-group-item:hover{
 	background-color:#fff;
 }
 
-.listitem{
-	background-color:#fff;
+.tasklistitem{
+	background-color:#ffffff;
+	
+}
+
+.donetasklistitem{
+	background-color:#f0ebf4;
+	color: #8c8294;
+	text-decoration: line-through;
+	text-decoration-color: red;
 
 }
 
-.itemelement-vcenter{
+.itemelement-row{
+
     display: flex;
     align-items: center;
-}
-
-@media (max-width: 767px) {
-    .row .lisitembuttons{
-        
-        width:9%;
-		margin-right:2px;
-    }
 
 }
+.itemelement-element{
+
+    display: flex;
+    align-items: center;
+
+}
+
+.formfields-vcenter{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.alertformgroup {
+	
+  
+	padding:4px;
+	margin-bottom:0px;
+  }
+  
+.alert-block{
+	display: block;
+	width:100%;
+
+}
+.itemelement-button{
+    display:block;
+    margin:auto;
+}
+
+@media (max-width: 991px) {
+.itemelement-row{
+
+    display: block;
+    align-items: auto;
+
+}
+
+	
+
+}
+
