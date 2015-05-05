@@ -97,6 +97,9 @@
 				</div>
 				</div>
 				
+				
+				
+				
 				<div class="list-group" id="donetasklis">
 				
 				<div class="list-group-item donetasklistitem" ng-repeat="donetask in donetasks">
@@ -104,8 +107,8 @@
 					<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 row itemelement-element">
 					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 						<div class="checkbox">   
-							<label>
-								<input type="checkbox" checked ng-model="selectedDoneTask" ng-change="marktaskactive($index)">
+							<label class="checked">
+								<input type="checkbox" ng-checked="true" ng-model="selectedDoneTask" ng-click="marktaskactive($index)">
 							</label>
 						</div>
 					
