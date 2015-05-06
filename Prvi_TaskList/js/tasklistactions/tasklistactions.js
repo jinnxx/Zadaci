@@ -55,6 +55,7 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
 	  console.log("Enabling edit for: " + index + ", editablename:" + $scope.tasks[index].editabletaskname + " name: " +  $scope.tasks[index].taskname);
 	  $scope.tasks[index].editabletaskname = $scope.tasks[index].taskname;
 	  $scope.tasks[index].emptytaskinputerror = false;
+	  $scope.emptytaskinputerror = false;
 	  $scope.editorEnabled = index; 
 	  
 	  
@@ -110,6 +111,7 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
   
   $scope.keydownItem = function(index){
 		if($scope.tasks[index].editabletaskname){
+			$scope.emptytaskinputerror = false;
 			$scope.tasks[index].emptytaskinputerror = false;
 			return;
 		}

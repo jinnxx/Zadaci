@@ -56,6 +56,8 @@
 				<div class="list-group-item tasklistitem" ng-repeat="task in tasks"  >
 				<div class="row itemelement-row">
 					<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 row itemelement-element">
+					
+					
 					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 						<div class="checkbox">   
 							<label>
@@ -64,15 +66,24 @@
 						</div>
 					
 					</div>
-					<div class="col-lg-8 col-md-8 col-sm-11  col-xs-11" ng-hide="editorEnabled==$index"><h4 class="list-group-item-heading">{{task.taskname}}</h4></div>
-					<div class="col-lg-8 col-md-8 col-sm-11  col-xs-11" ng-show="editorEnabled==$index"  id="{{'task' + $index}}"><input ng-model="task.editabletaskname" ng-change="keydownItem($index)">
-						<div class="formfields-vcenter"><span class="alert alert-danger alertformgroup" ng-show="task.emptytaskinputerror">
-							Enter your task!!</span>
+					<div class="col-lg-11 col-md-11 col-sm-11  col-xs-11" ng-hide="editorEnabled==$index"><h4 class="list-group-item-heading">{{task.taskname}}</h4></div>
+					<div class="col-lg-11 col-md-11 col-sm-11  col-xs-11 row " ng-show="editorEnabled==$index"  id="{{'task' + $index}}">
+						<div class="col-lg-6 col-md-6 col-sm-6  col-xs-6 itemcolumns-nopadding" >
+						<input class="inputsmall" ng-model="task.editabletaskname" ng-change="keydownItem($index)" >
+						</div >
+						
+						<div class="col-lg-6 col-md-6 col-sm-6  col-xs-6 itemcolumns-nopadding" >
+
+						<span class="alert alert-danger alertformgroup alert-small" ng-show="task.emptytaskinputerror">
+							Enter your task!!
+							</span>
 						</div>
 					
 					
 					</div>
 					</div>
+					
+					
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 row itemelement-element" >
 						
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">

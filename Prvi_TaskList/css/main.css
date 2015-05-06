@@ -44,6 +44,8 @@ a.list-group-item:hover{
   
 	padding:4px;
 	margin-bottom:0px;
+	
+	
   }
   
 .alert-block{
@@ -56,12 +58,39 @@ a.list-group-item:hover{
     margin:auto;
 }
 
+.itemcolumns-nopadding {
+   padding: 0 ;
+   margin: 0 ;
+
+}
+
 @media (max-width: 991px) {
 .itemelement-row{
 
     display: block;
     align-items: auto;
 
+}
+.alertformgroup {
+
+	font-size: x-small;
+	width:100%;
+  }
+  
+  .itemcolumns-nopadding {
+   padding: 0 ;
+
+   
+       
+}
+
+.alertsmall{
+	font-size: xx-small;
+	width:100%;
+  }
+  
+.inputsmall{
+	   width:100%;
 }
 
 	
