@@ -27,7 +27,9 @@
 			
 			<div class="col-md-8 list">
 				<h2>Your basic list</h2>
-				
+				<!-- 
+					Add task form
+				-->
 				<form class="form" role="form" style="padding-bottom:10px;padding-top:10px;" name="taskcreator" >
 					<div class="form-group row">
 					
@@ -50,11 +52,18 @@
 				</form>
 
 				
-				
+				<!-- 
+					Active tasks list
+				-->				
 				<div class="list-group" id="tasklist">
 				
 				<div class="list-group-item tasklistitem" ng-repeat="task in tasks"  >
 				<div class="row itemelement-row">
+				<!-- 
+					Active tasks list
+					1st row of item
+					checkbox + taskname h4/(ng-show: task name edit) + error message
+				-->	
 					<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 row itemelement-element">
 					
 					
@@ -82,7 +91,11 @@
 					
 					</div>
 					</div>
-					
+				<!-- 
+					Active tasks list
+					2nd row of item
+					(ng-show: ok-edit button)/(ng-show: cancel-edit button/edit-item button)/delete button
+				-->						
 					
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 row itemelement-element" >
 						
@@ -109,12 +122,19 @@
 				</div>
 				
 				
-				
+				<!-- 
+					Done tasks list
+				-->					
 				
 				<div class="list-group" id="donetasklis">
 				
 				<div class="list-group-item donetasklistitem" ng-repeat="donetask in donetasks">
 				<div class="row itemelement-row">
+				<!-- 
+					Done tasks list
+					1st row of item
+					checkbox + taskname h4
+				-->	
 					<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 row itemelement-element">
 					<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 						<div class="checkbox">   
@@ -127,6 +147,12 @@
 					<div class="col-lg-8 col-md-8 col-sm-11  col-xs-11" ><h4 class="list-group-item-heading">{{donetask.taskname}}</h4></div>
 					
 					</div>
+				<!-- 
+					Done tasks list
+					2n row of item
+					edit-item button(disabled)/delete button
+				-->						
+					
 					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 row itemelement-element" >
 						
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -152,6 +178,8 @@
 			
 			
 			</div>
+			
+			
 			<div class="col-md-4"></div>
 		
 		

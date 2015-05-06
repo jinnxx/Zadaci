@@ -3,15 +3,23 @@
 	padding-top:15px;
 	padding-bottom: 20px;
 }
+
+/* 
+	override hover bg color
+*/
 a.list-group-item:hover{
 	background-color:#fff;
 }
-
+/* 
+	override bg color
+*/
 .tasklistitem{
 	background-color:#ffffff;
-	
 }
 
+/* 
+	done task item
+*/
 .donetasklistitem{
 	background-color:#f0ebf4;
 	color: #8c8294;
@@ -20,12 +28,22 @@ a.list-group-item:hover{
 
 }
 
+/* 
+	vertical alignement inside a task row
+	changes via media query to different properties for different screen sizes
+*/
 .itemelement-row{
 
     display: flex;
     align-items: center;
 
 }
+
+/* 
+	vertical alignement inside a task row element
+	DOES NOT change via media query to different properties 
+*/
+
 .itemelement-element{
 
     display: flex;
@@ -39,18 +57,26 @@ a.list-group-item:hover{
     float: none;
 }
 
+
+/* 
+	override alert properties
+*/
 .alertformgroup {
 
 	padding:4px;
 	margin-bottom:0px;	
   }
   
-
+/* 
+	override button properties for task edit buttons
+*/
 .itemelement-button{
     display:block;
     margin:auto;
 }
-
+/* 
+	override columns properties for no padding and margin
+*/
 .itemcolumns-nopadding {
    padding-left: 0 ;
    padding-right: 0 ;
@@ -59,7 +85,14 @@ a.list-group-item:hover{
 
 }
 
+/* 
+	media queries
+*/
+/* 
+	devices under 992px
+*/
 @media (max-width: 991px) {
+
 .itemelement-row{
 
     display: block;
