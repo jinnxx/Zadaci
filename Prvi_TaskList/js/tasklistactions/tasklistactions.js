@@ -5,23 +5,39 @@ var myapp = angular.module('MyApp', []);
 
 myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
   $scope.editorEnabled = -1;
-  $scope.emptytaskinputerror = false;	
-  $scope.emptytaskinputerror = false;	
+  $scope.inputerror = false;	
+  $scope.errormessage = "";
+  $scope.errormessage2ManyTasks = "Limited to 20 tasks!";
+  $scope.errormessageEmptyInput = "Enter your task!";
+  
   $scope.currenttasktext = "";
   $scope.taskidcounter = 1;
-  $scope.maxtasks = 10;
+  $scope.maxtasks = 20;
   $scope.tasks = [];
   $scope.donetasks = [];
   
-  
+  $scope.resetErrors = function(){
+	  	$scope.inputerror = false;
+	  
+  }
   
   $scope.addTask = function(){
-	  $scope.emptytaskinputerror = false;
+	  $scope.resetErrors();
+	  
 		if(!$scope.currenttasktext){
-			$scope.emptytaskinputerror = true;
+			$scope.inputerror = true;
+			$scope.errormessage = $scope.errormessageEmptyInput;
 			$( "#inputtask" ).focus();
 			return;
 		}
+		
+		if(($scope.tasks.length + $scope.donetasks.length)>=$scope.maxtasks)
+		{
+			$scope.inputerror = true;
+			$scope.errormessage = $scope.errormessage2ManyTasks;
+			return;
+		}
+		
 	  
 	  
 	  var task = {
@@ -42,12 +58,16 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
   
   $scope.removeTaskActive = function(index){
 		$scope.tasks.splice(index, 1);
+		$scope.resetErrors();
+
 		console.log("Task list size: " + $scope.tasks.length);
   }
   
     
   $scope.removeTaskDone = function(index){
 		$scope.donetasks.splice(index, 1);
+		$scope.resetErrors();
+
 		console.log("Done Task list size: " + $scope.donetasks.length);
   }
   
@@ -55,7 +75,7 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
 	  console.log("Enabling edit for: " + index + ", editablename:" + $scope.tasks[index].editabletaskname + " name: " +  $scope.tasks[index].taskname);
 	  $scope.tasks[index].editabletaskname = $scope.tasks[index].taskname;
 	  $scope.tasks[index].emptytaskinputerror = false;
-	  $scope.emptytaskinputerror = false;
+	  $scope.inputerror = false;
 	  $scope.editorEnabled = index; 
 	  
 	  
@@ -74,6 +94,8 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
 	  $scope.disableEditTask();	 
 	  console.log("Disabled edit for: " + index + ", editablename:" + $scope.tasks[index].editabletaskname);
   }
+  
+  
   $scope.saveEditTask = function(index){
 	  
 	if(!$scope.tasks[index].editabletaskname){
@@ -111,7 +133,7 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
   
   $scope.keydownItem = function(index){
 		if($scope.tasks[index].editabletaskname){
-			$scope.emptytaskinputerror = false;
+			$scope.inputerror = false;
 			$scope.tasks[index].emptytaskinputerror = false;
 			return;
 		}
@@ -121,7 +143,7 @@ myapp.controller('TaskActionsCtrl', ['$scope', function($scope) {
   
     $scope.keydown = function(){
 		if($scope.currenttasktext){
-			$scope.emptytaskinputerror = false;
+			$scope.resetErrors();
 			return;
 		}
 	  

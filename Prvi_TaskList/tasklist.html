@@ -32,17 +32,17 @@
 					<div class="form-group row">
 					
 						<div class="formfields-vcenter col-sm-12 col-lg-2 col-md-2 col-xs-12"><label for="inputtask">Your task:</label></div>
-						<div class="formfields-vcenter col-sm-12 col-lg-4 col-md-4 col-xs-12"><input type="text" class="form-control" id="inputtask" placeholder="New task" ng-model="currenttasktext"  ng-change="keydown()" 
-						></div>
-					
+						<div class="formfields-vcenter col-sm-12 col-lg-4 col-md-4 col-xs-12">
+							<input type="text" class="form-control" id="inputtask" placeholder="New task" ng-model="currenttasktext"  ng-change="keydown()"  maxlength="20">
+						</div>
+						<div class="formfields-vcenter col-sm-12 col-lg-2 col-md-2 col-xs-12">
+							<button type="submit" class="btn btn-default btn-block" ng-click="addTask()">Add task</button>
+						</div>
+						<div class="formfields-vcenter col-sm-12 col-lg-3 col-md-3 col-xs-12 ">
+						<span class="alert alert-danger alertformgroup alert-block " ng-show="inputerror">
+							{{errormessage}}</span>
+						</div>
 
-		
-						
-					
-					<div class="formfields-vcenter col-sm-12 col-lg-2 col-md-2 col-xs-12"><button type="submit" class="btn btn-default btn-block" ng-click="addTask()">Add task</button></div>
-					<div class="formfields-vcenter col-sm-12 col-lg-3 col-md-3 col-xs-12"><span class="alert alert-danger alertformgroup alert-block" ng-show="emptytaskinputerror">
-							Enter your task!!</span>
-					</div>
 					</div>
 					
 					
@@ -69,7 +69,7 @@
 					<div class="col-lg-11 col-md-11 col-sm-11  col-xs-11" ng-hide="editorEnabled==$index"><h4 class="list-group-item-heading">{{task.taskname}}</h4></div>
 					<div class="col-lg-11 col-md-11 col-sm-11  col-xs-11 row " ng-show="editorEnabled==$index"  id="{{'task' + $index}}">
 						<div class="col-lg-6 col-md-6 col-sm-6  col-xs-6 itemcolumns-nopadding" >
-						<input class="inputsmall" ng-model="task.editabletaskname" ng-change="keydownItem($index)" >
+						<input class="inputsmall" ng-model="task.editabletaskname" ng-change="keydownItem($index)" maxlength="20">
 						</div >
 						
 						<div class="col-lg-6 col-md-6 col-sm-6  col-xs-6 itemcolumns-nopadding" >
